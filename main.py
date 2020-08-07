@@ -59,26 +59,26 @@ def main():
         max_worker = input(ERROR+"Enter a Number nigger than 1 >>")
 
     TPE = ThreadPoolExecutor(int(max_worker) if int(max_worker)<=30 else 30)
-    file_name = input(INFO+"Enter Wordlist path >>")
+    file_name = input(f"{INFO}Enter Wordlist path >>")
     while 1:
         if not os.path.exists(file_name) or not os.path.isfile(file_name):
-            file_name = input(ERROR+"File Not Found! Enter a valid file path >")
+            file_name = input(f"{ERROR}File Not Found! Enter a valid file path >")
         else:
             break
 
     global THE_HASH
-    THE_HASH = input(INFO+"Enter hash >>")
+    THE_HASH = input(f"{INFO}Enter hash >>")
     TYPE = TYPES.get(str(len(THE_HASH)))
     if TYPE:
-        acc = input(INFO+f"hash type is {TYPE} ? (Y/n)")
+        acc = input(f"{INFO}hash type is {TYPE} ? (Y/n)")
         if acc.lower() not in ("y","Y","","\n"):
-            TYPE = input(INFO+"Enter hash type >>")
+            TYPE = input(f"{INFO}Enter hash type >>")
     while 1:
         if TYPE not in dir(hashlib):
-            TYPE = input(ERROR+"Hash type not found enter a valid hash type >>")
+            TYPE = input(f"{ERROR}Hash type not found enter a valid hash type >>")
         else:
             break
-    print(SUCCESS+f"Hash type is {TYPE}")
+    print(f"{SUCCESS}Hash type is {TYPE}")
     open(file_name,"a+").write("\n")
     global WORDS
     WORDS= open(file_name).readlines()
@@ -95,9 +95,9 @@ def main():
     global FINDED
     
     if FINDED:
-        print('\n'+SUCCESS+f"Hash Cracked -> {Fore.WHITE}{Style.BRIGHT}{HASH_FIND}{Style.NORMAL}\n")
+        print(f"\n{SUCCESS}Hash Cracked -> {Fore.WHITE}{Style.BRIGHT}{HASH_FIND}{Style.NORMAL}\n")
     else:
-        print('\n'+ERROR+f"Hash Not Found !")
+        print(f"\n{ERROR}Hash Not Found !")
     print(f"\n{INFO}in {Fore.YELLOW}{Style.BRIGHT}{after-before} {Fore.BLUE}{Style.NORMAL}Secounds\n\n\n")
 try:
     main()
