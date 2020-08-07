@@ -8,7 +8,7 @@
  cd hash-cracker
  python3 main.py
 ```
-# Image
+Image
 -----
 ![Hash Cracker Iamge](image.png)
 
