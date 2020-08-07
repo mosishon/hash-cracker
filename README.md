@@ -5,9 +5,10 @@
 #### Clone Script and run it
  ```
  git clone https://github.com/mostafa-arshadi/hash-cracker.git
- 
+ cd hash-cracker
  python3 main.py
 ```
 # Image
+-----
 ![Hash Cracker Iamge](image.png)
 
