@@ -1,3 +1,4 @@
+![python3.8](https://img.shields.io/badge/python-v3.8-blue)
 # hash-cracker
 ### A simple hash cracker written in Python programming language!
 
