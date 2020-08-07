@@ -32,7 +32,6 @@ def cracking(type):
     while not FINDED:
         global WORDS
         hash = WORDS.pop(0)
-        if hash == "password": print("GET")
         if hash == '':
             break 
         res = crack(hash,type)
@@ -45,9 +44,9 @@ def cracking(type):
 
 TYPES = {"32":"md5","64":"sha256"}
 def main():
-    INFO = Fore.BLUE+"[!] "
-    ERROR = Fore.RED+"[-] "
-    SUCCESS = Fore.GREEN+"[+] "
+    INFO = f"{Fore.BLUE}[!] "
+    ERROR = f"{Fore.RED}[-] "
+    SUCCESS = f"{Fore.GREEN}[+] "
     print(f"""
     {INFO}Welcome To Hash Cracker!
     {INFO}Developer : @beQrity
@@ -56,7 +55,7 @@ def main():
     while 1:
         if max_worker.isnumeric() and int(max_worker) >=1:
             break
-        max_worker = input(ERROR+"Enter a Number nigger than 1 >>")
+        max_worker = input(f"{ERROR}Enter a Number nigger than 1 >>")
 
     TPE = ThreadPoolExecutor(int(max_worker) if int(max_worker)<=30 else 30)
     file_name = input(f"{INFO}Enter Wordlist path >>")
