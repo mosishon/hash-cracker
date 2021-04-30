@@ -55,7 +55,7 @@ def main():
     while 1:
         if max_worker.isnumeric() and int(max_worker) >=1:
             break
-        max_worker = input(f"{ERROR}Enter a Number nigger than 1 >>")
+        max_worker = input(f"{ERROR}Enter a Number bigger than 1 >>")
 
     TPE = ThreadPoolExecutor(int(max_worker) if int(max_worker)<=30 else 30)
     file_name = input(f"{INFO}Enter Wordlist path >>")
